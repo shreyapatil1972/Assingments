@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook-like NavBar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f0f2f5; /* Light gray background */
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Left Section: Logo and Search */
+        .left-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            height: 32px;
+            width: auto;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff; /* White background */
+            border: 1px solid #d1d1d1; /* Border for input */
+            border-radius: 20px;
+            padding: 5px 10px;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+
+        /* Center Section: Nav Icons */
+        .center-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-icon {
+            position: relative;
+            font-size: 20px;
+            color: #606770; /* Dark gray color */
+            cursor: pointer;
+        }
+
+        .nav-icon.active {
+            color: #1877f2; /* Facebook blue */
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background-color: red;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 2px 6px;
+        }
+
+        /* Right Section: Options */
+        .right-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .circle-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e4e6eb; /* Light gray */
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            color: #606770;
+            font-size: 16px;
+        }
+
+        .circle-icon:hover {
+            background-color: #d8d8d8; /* Slightly darker gray */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- Left Section -->
+        <div class="left-section">
+            <img src="./assets/facebook.jpeg" alt="Facebook Logo" class="logo">
+            <div class="circle-icon"><i class="fas fa-search"></i></div>
+        </div>
+
+        <!-- Center Section -->
+        <div class="center-section">
+            <div class="nav-icon active"><i class="fas fa-home"></i></div>
+            <div class="nav-icon">
+                <i class="fas fa-flag"></i>
+                <span class="notification-badge">9+</span>
+            </div>
+            <div class="nav-icon">
+                <i class="fas fa-video"></i>
+                <span class="notification-badge">9+</span>
+            </div>
+            <div class="nav-icon"><i class="fas fa-store"></i></div>
+            <div class="nav-icon"><i class="fas fa-bars"></i></div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="circle-icon"><i class="fas fa-plus"></i></div>
+            <div class="circle-icon">
+                <i class="fas fa-comment-dots"></i>
+                <span class="notification-badge">1</span>
+            </div>
+            <div class="circle-icon">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">2</span>
+            </div>
+            <div class="circle-icon"><i class="fa-solid fa-caret-down"></i></div>
+        </div>
+    </nav>
+</body>
+</html>

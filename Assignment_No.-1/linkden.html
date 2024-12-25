@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .left-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-left: 25px;
+        }
+
+        .navbar .logo {
+            height: 50px;
+            width: 50px;
+        }
+
+        .navbar .right-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center; /* Ensures all buttons align in a single line */
+            gap: 15px; /* Adjust space between icons */
+        }
+
+        .icons button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icons .separator {
+            width: 1px;
+            height: 20px;
+            background-color: #ddd; /* Separator styling */
+        }
+
+        .search-bar {
+            flex: 1;
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            width: 30%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: -30px;
+            color: #555;
+        }
+        .notification-badge {
+            position: absolute;
+            top: 18px;
+            right: 175px;
+            background-color: red;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 2px 6px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="left-section">
+            <img src="./assets/linkden.png" alt="logo" class="logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search mail">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="right-section">
+            <div class="icons">
+                <button title="Home"><i class="fa-solid fa-house"></i></button>
+                <button title="User"><i class="fa-solid fa-user-group"></i></button>
+                <button title="Bag"><i class="fa-solid fa-bag-shopping"></i></button>
+                <button title="Message"><i class="fa-solid fa-message"></i></button>
+                <div>
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notification-badge">1</span>
+                </div>
+                <button title="Profile"><i class="fa-solid fa-circle-user"></i></button>
+                <div class="separator"></div>
+                <button title="Apps">⬜</button>
+                <button title="Play"><i class="fa-solid fa-play"></i></button>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBC Navigation Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            padding: 10px 20px;
+            color: white;
+        }
+        .navbar .left-section {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Space between logo, user icon, and button */
+        }
+        .navbar .logo {
+            height: 30px;
+            width: 100px;
+        }
+        .navbar .iconInNavbar {
+            font-size: 24px;
+            color: white;
+        }
+        .navbar .signin-btn {
+            background: none;
+            color: white;
+            border: 1px solid white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .navbar .signin-btn:hover {
+            background-color: white;
+            color: black;
+        }
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar .nav-links li {
+            position: relative;
+        }
+        .navbar .nav-links li:not(:first-child)::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -10px;
+            height: 100%;
+            width: 1px;
+            background-color: white;
+        }
+        .navbar .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 0 10px;
+        }
+        .navbar .search-box {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 5px;
+            padding: 2px;
+        }
+        .navbar .search-box input {
+            border: none;
+            padding: 5px;
+            outline: none;
+            border-radius: 5px;
+        }
+        .navbar .search-box button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .navbar .right-section {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Space between logo, user icon, and button */
+        }
+        .iconInNavbar1{
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- Left Section: Logo, User Icon, and Sign-in -->
+        <div class="left-section">
+            <a href="#">
+                <img src="./assets/logo.png" alt="logo" class="logo">
+            </a>
+            <span class="iconInNavbar"><i class="fa-solid fa-circle-user"></i></span>
+            <button class="signin-btn">Sign in</button>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="#">News</a></li>
+            <li><a href="#">Sport</a></li>
+            <li><a href="#">Reel</a></li>
+            <li><a href="#">Worklife</a></li>
+            <li><a href="#">Travel</a></li>
+            <li><a href="#">Future</a></li>
+            <li><a href="#">More</a></li>
+        </ul>
+        
+        <!-- Search Box -->
+        <div class="right-section">
+            <span class="iconInNavbar1"><i class="fa-solid fa-caret-down"></i></span>
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+
+            </div>
+            
+        </div>
+    </nav>
+</body>
+</html>
