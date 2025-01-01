@@ -1,0 +1,173 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Clouds</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            max-width: 100vw;
+            background: #5899c1;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cloud1,
+        .cloud2 {
+            position: absolute;
+            padding: 10px;
+            animation: moveClouds 60s linear infinite;
+        }
+
+        .cloud1 {
+            scale: 40%;
+            top: 100px;
+            animation-delay: 0s;
+        }
+
+        .cloud2 {
+            scale: 60%;
+            top: 300px;
+            animation-delay: 15s;
+        }
+
+        .base1,
+        .base2 {
+            position: relative;
+            background: #ddd4d0;
+            border-radius: 100px;
+            background: linear-gradient(#fff, #ddd4d0 40%);
+        }
+
+        .base1 {
+            width: 300px;
+            height: 20px;
+        }
+
+        .base2 {
+            width: 450px;
+            height: 20px;
+        }
+
+        .base2half {
+            position: absolute;
+            top: -13px;
+            right: 6px;
+            width: 400px;
+            height: 30px;
+            background: #ddd4d0;
+            border-radius: 50%;
+            background: linear-gradient(#fff, #ddd4d0 50%);
+        }
+
+        .shape {
+            position: absolute;
+            background: #ddd4d0;
+        }
+
+        .one {
+            top: -100px;
+            left: 40px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(100% 80% at bottom right, #ddd4d0 110%, #fff 130%);
+        }
+
+        .two {
+            top: -170px;
+            left: 135px;
+            width: 150px;
+            height: 190px;
+            border-top-left-radius: 45%;
+            border-top-right-radius: 60%;
+            border-bottom-right-radius: 40%;
+            background: radial-gradient(75% 110% at bottom, #ddd4d0 85%, #fff 90%);
+        }
+
+        .three {
+            top: -110px;
+            left: 110px;
+            width: 120px;
+            height: 120px;
+            border-radius: 200% 200% 0% 200%;
+            background: radial-gradient(90% 90% at bottom right, #ddd4d0 110%, #fff 130%);
+        }
+
+        .four {
+            top: -250px;
+            left: 180px;
+            width: 170px;
+            height: 255px;
+            border-radius: 50% 50% 0% 0%;
+            background: radial-gradient(70% 100% at bottom, #ddd4d0 90%, #fff 100%);
+        }
+
+        .five {
+            top: -180px;
+            left: 310px;
+            width: 120px;
+            height: 200px;
+            border-radius: 90% 100% 100% 100%;
+            transform: rotate(20deg);
+            background: #ddd4d0;
+        }
+
+        .six {
+            top: -180px;
+            left: 180px;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: radial-gradient(95% 85% at bottom right, #ddd4d0 120%, #fff 130%);
+        }
+
+        .seven {
+            top: -115px;
+            left: 240px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(110% 90% at bottom right, #ddd4d0 100%, #fff 130%);
+        }
+
+        @keyframes moveClouds {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="cloud1">
+            <div class="base1">
+                <div class="shape one"></div>
+                <div class="shape two"></div>
+            </div>
+        </div>
+
+        <div class="cloud2">
+            <div class="base2">
+                <div class="base2half"></div>
+                <div class="shape three"></div>
+                <div class="shape four"></div>
+                <div class="shape five"></div>
+                <div class="shape six"></div>
+                <div class="shape seven"></div>
+            </div>
+        </div>
+    </div>
+</body>

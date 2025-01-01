@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+    <style>
+        * {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+#sun {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+
+  position: absolute;
+  top: 0;
+  left: 40%;
+  animation: sunrise 20s;
+}
+#sky {
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  background-color: #6e44ff;
+  animation: sky 25s;
+}
+#grass {
+  background-color: #007200;
+  height: 60%;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}
+
+@keyframes sunrise {
+  0% {
+    top: 90%;
+    left: 0;
+    background-color: #fca311;
+  }
+  30% {
+    top: 0;
+    left: 25%;
+    background-color: #ffec01;
+  }
+  70% {
+    top: 0;
+    left: 75%;
+    background-color: #ffba08;
+  }
+  100% {
+    top: 90%;
+    left: 100%;
+    background-color: #f3722c;
+  }
+}
+
+@keyframes sky {
+  0% {
+    background-color: #6e44ff;
+  }
+  10% {
+    background-color: #bdb2ff;
+  }
+  20% {
+    background-color: #cee9fc;
+  }
+  30% {
+    background-color: #f2c8ff;
+  }
+  60% {
+    background-color: #597eaa;
+  }
+  70% {
+    background-color: #556f7a;
+  }
+  80% {
+    background-color: #2e6171;
+  }
+  90% {
+    background-color: #495057;
+  }
+  100% {
+    background-color: #22223b;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <div id="sky">
+      <div id="sun"></div>
+    </div>
+
+    <div id="grass"></div>
+  </body>
+</html>
