@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNN Navigation Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #63a9e5;
+            padding: 10px 20px;
+            color: white;
+            height: 70px;
+        }
+        .navbar .left-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .navbar .left-section h2{
+            font-size: 30px;
+            margin-left: 40px;
+        }
+        .navbar .right-section {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 20px;
+            padding: 20px;
+        }
+        .navbar .right-section li a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            padding: 8px;
+            margin-left: 40px;
+            transition: color 0.3s ease;
+        }
+        .navbar .right-section li a:hover {
+            color: #999;
+        }
+        .navbar .right-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .hero {
+            position: relative;
+            color: white;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+        }
+
+        .contentbox {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            width: 900px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .content-title{
+            margin-left: 40px;
+            color: black;
+        }
+        .content-title h2{
+            color: #1c91d0;
+            font-size: 30px;
+        }
+        .content-title h4{
+            font-size: 20px;
+        }
+        .searchbox {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+        }
+
+        .searchbox .icon {
+            text-align: center;
+            font-size: 20px;
+            margin-left: 30px;
+        }
+        .searchbox .icon a {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #1f1f20;    
+        }
+        .search {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3ebcfb;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: rgb(255, 246, 246);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .search:hover {
+            background-color: #1c91d0;
+        }
+        .section{
+            width: 100%;
+            height: 350px;
+            background-color: white;
+            padding-top: 90px;
+            padding-bottom: 112px;
+            gap:72px;
+            justify-content: center;
+        }
+        .title {
+            margin-left: 670px;
+            padding: 40px;
+        }
+        .section2{
+            width: 100%;
+            height: 229px;
+            display: flex;
+            margin-left: 280px;
+        }
+        .section2 .box{
+            width: 280px;
+            height: 180px;
+            margin-left: 30px;
+            padding: 40px; 
+        }
+        .box .icon-box{
+            width: 50px;
+            height: 50px;
+            background-color: #bce3f7;
+            margin-left: 100px;
+            border-radius: 10px;
+        }
+        .box div h2{
+            
+            font-family: Poppins;
+            font-size: 14px;
+            text-align: center;
+            margin-top: -25px;
+        }
+        .box div h4{
+            font-family: Poppins;
+            font-size: 20px;
+            text-align: center;
+            
+        }
+        .icon-box i{
+            font-size: 20px;
+            padding: 13px;
+        }
+        .section3{
+            width: 100%;
+            height: 270px;
+            background-color: white;
+        }
+        .section3-title h2{
+            font-family: Poppins;
+            font-size: 30px;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            margin-left: 80px;
+        }
+        .patners img{
+            height: 50px;
+           margin-left: 60px;
+           margin-top: 30px;
+        }
+        .section4{
+            width: 100%;
+            height: 800px;
+        }
+        .section4-title h2{
+            font-family: Poppins;
+            font-size: 30px;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            margin-left: 80px;
+            margin-bottom: 60px;
+        }
+        .section4-box{
+            margin-left: 410px;
+        }
+        .box-top{
+            width: 80%;
+            height: 315px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .box-bottom{
+            width: 80%;
+            height: 315px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .box-containt{
+            width: 200px;
+            height: 30px;
+            display: flex;
+        }
+        .containt-left{
+            width: 150px;
+        }
+        .containt-right{
+            width: 40px;
+            height: 13px;
+            margin-top: 20px;
+        }
+        .section5{
+            width: 100%;
+            height: 200px; 
+        }
+        .section5 img{
+            width: 100%;
+            height: 800px;
+            background: #00000080;
+
+        }
+        .section5-div{
+            position: absolute;
+            margin-top: -600px;
+            
+        }
+        .section5-title h6{
+            font-family: Poppins;
+            font-size: 60px;
+            margin-left: 350px;
+            color: white;
+            margin-top: 0;
+        }
+        .section5-container{
+            width: 75%;
+            height: 200px;
+            margin-left: 350px;
+            margin-top: -90px;
+            border-top: 1px solid white;
+            display: flex;
+        }
+        .container-left{
+            width: 40%;
+            height: 150px;
+            margin-top: 0;
+        }
+        .content p{
+            font-family: Poppins;
+            font-size: 20px;
+            line-height: 32px;
+            text-align: left; 
+            color: white;
+        }
+        .container-right{
+            width: 40%;
+            display: flex;
+            margin-top: 20px;
+            gap: 40px;
+            margin-left: 50px;
+        }
+        .image-text{
+            font-size: 15px;
+            color: white;
+        }
+        .container-left button{
+            background-color: white;
+            border-radius: 15px;
+            width: 150px;
+            height: 40px;
+            border: none;
+        }
+        .section6 {
+            width: 100%;
+            height: 700px;
+            background-color: rgb(242, 241, 241);
+            margin-top: 600px;
+        }
+        .section6-head {
+            margin-left: 350px;
+            margin-top: 500px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .section6-head h4 {
+            color: #1f1f20;
+            margin-top: 120px;
+            font-size: 40px;
+        }
+        .section6-right {
+            display: flex;
+            gap: 10px;
+            margin-right: 350px;
+            margin-top: 100px;
+        }
+        .section6-right button {
+            width: 40px;
+            height: 40px;
+            background-color: aliceblue;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .section6-bottom{
+            width: 75%;
+            height: 500px;
+            display: flex;
+            margin-left: 350px;
+            gap: 50px;
+        }
+        .section6-box{
+            width: 23%;
+            height: 400px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .section6-containt{
+            width: 28%;
+            height: 200px;
+            padding: 10px;
+           
+        }
+        .section6-top h3,p{
+            width: 300px;
+            font-size: 14px;
+        }
+        .section6-bot p{
+            width: 300px;
+            font-size: 13px;
+        }
+        .section6-top a {
+            width: 180px;
+            font-size: 15px;
+            margin-bottom: 5px;
+            color: #1f1f20;
+            display: flex;    
+        }
+        .section6-bot button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fafbfb;
+            border-radius: 50%;
+            border-color: #1c91d0;
+            width: 30px;
+            height: 30px;
+            color:#1c91d0;
+        }
+        .section7 {
+            width: 100%;
+            height: 700px;
+            background-color: white;
+            margin-top: 600px;
+            background-image: url(https://s3-alpha-sig.figma.com/img/8727/eb9f/7b1b334dbe49eaafe1968bc472c14fbf?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=V7WVBZ8JiQLG2cgNOAgHM0p1qAqXR7Jk2yxUuSUMwJVzzUz68OO0GqAcrL2V8bi5xDwQJJ3B7Wa0zDJzyy2Ue~6jH0nBmhif-gZ3wyB-1WuDT9Sg3IBgNFrRD~cqhkzThNdRswaGrcK1ZXzwd0TG0AzmPoM40IJmMNMD2YpoNfEqas~o1g8nYZRK-u4LR16E2f5QHCkxATiOO9zKjjEIr2EteVq4ZwB1-IGVkisCYhpTD4aZeHlZxf3lNhyfVTEKjL3-qMsuq9SHgjsJiJxzO87ZuONXS4r4YeBEoNeN3Y1sVKHx1b38zpZVHeHKmgPxz3rKHdajxnR24KgZ4GtnGQ__);
+        }
+        .section7-head {
+            margin-left: 350px;
+            margin-top: -600px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .section7-head h4 {
+            color: white;
+            margin-top: 120px;
+            font-size: 40px;
+        }
+        .section7-bottom{
+            width: 70%;
+            height: 230px;
+            margin-left: 350px;
+            margin-top: 100px;
+        }
+        .section7-box{
+            display: flex;
+            gap: 20px;
+
+        }
+        .testimonial-card {
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            width: 260px;
+            text-align: left;
+            position: relative;
+        }
+        .profile-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            top: -35px;
+            left: 20px;
+            background-color: white;
+            border: 3px solid white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .profession {
+            color: gray;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .stars {
+            color: #FFD700;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .testimonial {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .testimonial-card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+        }
+        .testimonial-card .content {
+            position: relative;
+            margin-top: 50px;
+        }
+        .name-stars-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .section8{
+            width: 100%;
+            height: 400px;
+            background-color: white;
+            align-items: center;
+            justify-content: center;
+        }
+        .subscription-container {
+            display: flex;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 900px;
+            width: 100%;
+            height: 300px;
+            margin-left: 350px;
+            margin-top: 120px;
+        }
+        .image-container {
+            flex: 1;
+        }
+        .image-container img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .text-container {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        .text-container h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .form-container input[type="email"] {
+            flex: 1;
+            padding: 12px 15px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+            max-width: 300px;
+        }
+        .form-container button {
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            background-color: #00a3a3;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-container button:hover {
+            background-color: #008a8a;
+        }
+        .footer {
+            background-color: #000;
+            padding: 40px 20px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        .footer-column h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: white;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        .footer-column ul li a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        .footer-social {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .footer-social a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #fffdfd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer-social a li {
+            width: 18px;
+            height: 18px;
+        }
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 15px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 70%;
+            margin-left: 180px;
+        }
+        .footer-bottom p {
+            margin: 0;
+            font-size: 14px;
+            flex: 1;
+            color: rgb(145, 141, 141);  
+        }
+        .payment-icons {
+            justify-content: flex-end;
+        }
+        .payment-icons img {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="left-section">
+            <h2>ACENDA</h2>
+        </div>
+        <ul class="right-section">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Destination</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="hero">
+        <img src="https://s3-alpha-sig.figma.com/img/abd9/89ec/ed9fb6b56fa98039123e828fd548e386?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CPQFtg-aXbKtW0vXlIw8jLbDf89-7R1HZQy2a67qFyL1YSfher4aSx1sZg4Tkiiy63DHrp5lc-pihmHMLns3ZxzlVvP8wd5zfwgW5ANs38OP~a-FmDgwnx2p-GkIWSWjYnfVVFEUJSdY7f9XhlbZdM8IwIZRq8dV1R-rk63zhNgjgVJIDxODHLBLllMw71U8S3Tb7x4jP~u39d0ZwZcO6XEQC88gqihGc61WjKECK7Elwjb6pIBeO9QE2LkGi~biBlOI5PlLe1NDBp7ScpZCGyjj84T3AV8GVnASnx7Ou7uNMEZZ0CWljMfn~KLVq59JVvvvIbH0sOQHK5UEnLoSZA__" alt="background">
+
+        <div class="contentbox">
+            <div class="content-title">
+                <h2>Good Morning!</h2>
+                <h4>Explore beautiful places in the world with Acenda</h4>
+            </div>
+            <div class="searchbox">
+                <div class="icon">
+                    <a><i class="fa-solid fa-location-dot"></i>Loaction<br><small>Add Destination</small></a>
+                </div>
+                <div class="icon">
+                    <a><i class="fa-solid fa-calendar-days"></i>Check in<br><small>Add dates</small></a>
+                </div>
+                <div class="icon">
+                    <a><i class="fa-solid fa-calendar-days"></i>Check out<br><small>Add dates</small></a>
+                </div>
+                <div class="icon">
+                    <a><i class="fa-solid fa-user-group"></i>Guests<br><small>Add Guests</small></a>
+                </div>
+                <div class="search">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="title">
+            <h2>WHY CHOOOSE US?</h2>
+        </div>
+        <div class="section2">
+            <div class="box">
+                <div class="icon-box">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <div>
+                    <h4>Competitive Prices</h4><br>
+                    <h2>Lorem Ipsum is simply dummy text<br>of the printing and typesetting<br>industry lorem Ipsum</h2>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icon-box">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <div>
+                    <h4>Secure Booking</h4><br>
+                    <h2>Lorem Ipsum is simply dummy text<br>of the printing and typesetting <br>industry lorem Ipsum</h2>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icon-box">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+                <div>
+                    <h4>Seamless Experience</h4><br>
+                    <h2>Lorem Ipsum is simply dummy text <br>of the printing and typesetting <br>industry Lorem Ipsum</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section3">
+        <div class="section3-title">
+            <h2>OUR PATNERS</h2>
+        </div>
+        <div class="patners">
+            <img src="image.png" alt="patners">
+        </div>
+    </div>
+    <div class="section4">
+        <div class="section4-title">
+            <h2>TOP BOOK NOW</h2>
+        </div>
+        <div class="section4-box">
+            <div class="box-top">
+                <div class="box-image">
+                    <img src="https://s3-alpha-sig.figma.com/img/47aa/06ec/ad8982c0a58e2ffbe052e104c4fb36ca?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JY07oeaMV~0p16Q9WCPKu4~K5rvypHsd8RxnnTIAluqgnLc-aqmO38w8-hJkyGUQuHpEUcjNA1YSOdytQBYusibwgz3v46ZRu7Z3e3sjc9tO2UnRNJooIOv1hECg2dRT8-9v4bpCWBwMNjiM9bl4ZgWgFychaMwqTry43x6l39TQC8ZaEkKpFgSNB-IBfX6S8t7i8c4PC02i-QBCu4HfdPdx3GeiTV9QdCfGUbGK~nytDwEmXZnnjyUNTgUWNWLBdJZMvBbBHCtELVQeyuYOYSddgv4KJOz2Nt1IFsOvL-6gfDrq6S2hQMmTF~KikTjcB2Je-3DVbTjqfZQNmaLrgQ__" alt="box image" style="width: 200px;height: 200px;border-radius: 12px;">
+                    <div class="box-containt">
+                        <div class="containt-left">
+                            <h3>The Oasis</h3>
+                            <a><i class="fa-solid fa-location-dot"></i>Rio de Janeiro, Brazil</a>
+                        </div>
+                        <div class="containt-right">
+                            <span>$10,000</span>
+                        </div>   
+                    </div>
+                </div>
+                <div class="box-image">
+                    <img src="https://s3-alpha-sig.figma.com/img/31fe/cc0c/6d9982cf4adaf2f70f21160b352cc9be?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GjZA1KrxCMP3VttQCDsTtp~sIUe66gb~GUSfqUqB-fBZJ8S5wMFH69qaJQKwSa14QJgsotxgL1d7rq-AwHdwiZVwPzDAzcLwyjt5eso~m4DgqZAdBncQK1kgAXV58pc~jZ1XYn6w8ih4FTDkqDnnym8wU7B2xrg00Ep~qtVKGTa-GwJ~Xtagyzyp0J5mlT~Zukt1FjTKDCfjEVjaSxlIItCX6T85dbAWIaokplhRJ5NfvVkCC2TOVQzrSIU5xOd~Ed57OWFTVHe4jBC0XGRnkzBWtHQt-PT05LUlpoMvhtMKJJhEaeKn-A9mrVqdqb4hXFJTN9peLva-DD67TwOuQg__" alt="box image"style="width: 200px;height: 200px;border-radius: 12px;">
+                    <div class="box-containt">
+                        <div class="containt-left">
+                            <h3>The Sanctuary</h3>
+                            <a><i class="fa-solid fa-location-dot"></i>Bali, Indonesia</a>
+                        </div>
+                        <div class="containt-right">
+                            <span>$9,000</span>
+                        </div>   
+                    </div>
+                </div>
+                <div class="box-image">
+                    <img src="https://s3-alpha-sig.figma.com/img/9113/fdae/a6a758c63eb5c871a7c0fcc4ed11c5db?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jNhRcUMCLS1fhYidJOEAzYGUSvN7jp6lGOgiTNvgpOlaGighhvovVYzgk6nrHi031h3f4denmSqEzHyfuJQwBx1ZvxJQTMnZJT7dRX~1k6pUu~uyu24vyyH~IphrxWYF-8lDgZaMd~JVkgthsGiT4fUsRJyN-Jld~m7Q7ulsU6AHG~zCDOugCYQBP597VMneOWwv2z~Onw7~~OX4iOphQkFyWkmBo2HmWvN~~-Bu1BPDa1bRAPM8a2ogJvo6lCDVm69k9XkDxRSfBKEzX0wkhzK0t3IQHKVs6-GXUzCSKe9qvjgmKGASdnqcTFuj3siurLo4u52XECc~uzxBug8oBg__" alt="box image"style="width: 200px;height: 200px;border-radius: 12px;">
+                    <div class="box-containt">
+                        <div class="containt-left">
+                            <h3>The Infinity</h3>
+                            <a><i class="fa-solid fa-location-dot"></i>Sydney, Australia</a>
+                        </div>
+                        <div class="containt-right">
+                            <span>$8,000</span>
+                        </div>   
+                    </div>
+                </div>
+                <div class="box-image">
+                    <img src="https://s3-alpha-sig.figma.com/img/cb5e/5781/8cb419edcf70afe36758864ee42c5714?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=O-NihUlzZCw414qUc~dNKyHt08cEzdN1r~qcnnsuENL7pZJJ1018AobN5LZxvcEpEt9I~wdxRtuF1ITlKjBUk-PwjWdQQVJ~4Ekf0x22ze7I4KSsSjkzjfGKHSeCqJr6ESq1dr4Zi6R8tLTuvDmMxS802HjfOJ2qD6MVWFde2yJP4Tidj4hxB24VqOeF4He-Qg0Rl~OtO1MJ~8d-aKquqU3kl~upuVM8GClrZijZjj4cJ-ohEzdjFvxhlItJRQTThlXqjh5QG6adgswsn89iuSfzV9n5qn3qjDq8-7wpMbAh6wDtuIiy5CTdpQsda4j29YPyVXeT6UWwAWCCwlwTVQ__" alt="box image"style="width: 200px;height: 200px;border-radius: 12px;">
+                    <div class="box-containt">
+                        <div class="containt-left">
+                            <h3>La Maison</h3>
+                            <a><i class="fa-solid fa-location-dot"></i>Barcelona, Spain</a>
+                        </div>
+                        <div class="containt-right">
+                            <span>$10,000</span>
+                        </div>   
+                    </div>
+                </div>
+                
+            </div>
+            <div class="box-bottom">
+                <div class="box-image">
+                    <img src="https://s3-alpha-sig.figma.com/img/f4f6/4554/ef663e2a52775ac67881a3e9e629d267?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ca3FtPSs02LNStCTivni00Yh9egssUXNzp07Lbb3QPIRyhDS9zneHMZKhZHIgPNKsx58UCw8oSTulUkmZPGjjFuLW5pcApaveZED31rKSKet0YMurVsVKjNLpKNd-oP24STU-FBFxOUYQ6Yzb9ZJv7u3UehfHS0yWwIlukMCXFAhioAqNVy5JQGVULlZA5RbuMQvHBKDFhbnFNarpuP6ecnCdMXoqcFEzL-6r9FO9c6Be9Lb6f5YnqqOBpArxWQLTduKhsBHzt9ywGmcN~~W8IWXMW~0T3tXP6czQzDASFvc-1IrZM2bgFX68O3ClPgnDcHPM8xtSgdqFapLlJLMVQ__" alt="box image" style="width: 200px;height: 200px;border-radius: 12px;">
+                    <div class="box-containt">
+                        <div class="containt-left">
+                            <h3>Serenity Shores</h3>
+                            <a><i class="fa-solid fa-location-dot"></i>Sydney, Australia</a>
+                        </div>
+                        <div class="containt-right">
+                            <span>$7,000</span>
+                        </div>   
+                    </div>
+                </div>
+                <div class="box-image">
+                    <img src="https://s3-alpha-sig.figma.com/img/faf7/a7db/0d423e97493995530b852829e0f96301?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oN5ceYzl2M042i0qwcteGPF6FMsuWejnrQobAJ60ZhgFmiU5kQa5FYq2U6tkVLKyMjYC3UK0W2WaHKAkGESFE9RfSC9vO6T1gNSODqUjJWx3qyBj9pc79i3yq93xFhMzYP2KI0Je5U5vpFJboaNmAI36nItiClFIN5QGj7qWBabYSyi4mZ8fhDBKijQkw3rEX7~VtFkP113uyooExJKY~3tH-2fpSrSLmG8667ukQS8~XFDXQKqQf7Z0lhwXjLVHKy~6zlRAibQjIeWcUVsyQNNmYHn81fwi~fJovJum9HuP8P1tRWkBjn6vcX5p9yMoHJduf8ofy9vVuA6FGHdN6Q__" alt="box image"style="width: 200px;height: 200px;border-radius: 12px;">
+                    <div class="box-containt">
+                        <div class="containt-left">
+                            <h3>Azure Haven</h3>
+                            <a><i class="fa-solid fa-location-dot"></i>Barcelona, Spain</a>
+                        </div>
+                        <div class="containt-right">
+                            <span>$8,000</span>
+                        </div>   
+                    </div>
+                </div>
+                <div class="box-image">
+                    <img src="https://s3-alpha-sig.figma.com/img/c4e4/39b1/682ce90ff00744313bda6e8eaaec581e?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=gPwRwGdTJ1GN2ZuTLB-OaSD63GyrwQkt2tH64LfVnL~2dBEy7EMl0081SLROqi4D3Bri~Gq45LSzJw7x5~27S11HONQcySTPmCCvU35lISdBl630VVH1MZ27BRdAutPRPh3kwWqsWA8SOqe20LLpeEwi0tBzqDF1WfrB3nyio0jL8kPB0UDurX~HpF9BdW5--vcjMIvmHdyD1qMR7OOwma7YMv094okr55WOBpLzQ0uSkPmvbM3h1-dG8glkMV7eSYWNHUPAXBNc4om44UE5zJ79VL7p4K8ExAOZgph~HAwleREDqKYcqlgS7PVwzCmT9MM1FuyjQ4spGMZRmPU00g__" alt="box image"style="width: 200px;height: 200px;border-radius: 12px;">
+                    <div class="box-containt">
+                        <div class="containt-left">
+                            <h3>Ocean Breeze</h3>
+                            <a><i class="fa-solid fa-location-dot"></i>Bali, Indonesia</a>
+                        </div>
+                        <div class="containt-right">
+                            <span>$7,000</span>
+                        </div>   
+                    </div>
+                </div>
+                <div class="box-image">
+                    <img src="https://s3-alpha-sig.figma.com/img/1c37/c56e/d0cd299080bc1918a986e402fdf70253?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qXpi1DNSRLhXiKgPgxEwGAmgudILb8fezbp9Repw6BkuWIfcJ3a3OXdE3aOGaM~Tp6xB3m4W91OtMX1o2KUixEIu561UCg-uwctFttNKtoWCdPzLjUeDuneXJElNJzz7Eqk8JcC~JtxOGLhylaYJKuiYrlEsdquA0IN4Q2VVdOaMx53AF0i4gKVp8R8KtsGpOjEJE0-kXSDygkjBl8~VH1Iom5CvcnSF0IudNvsuHIeGberOLoKe12RP~IsXR6JgBx40Q~RjCQJ9sYDcEpoPBGVzPANYhqqKlXb~B3d7-uuivqXITvE1t4IFSOAmF6vnu0VRluweurbsrS~TPtYcmQ__" alt="box image"style="width: 200px;height: 200px;border-radius: 12px;">
+                    <div class="box-containt">
+                        <div class="containt-left">
+                            <h3>Palm Breeze</h3>
+                            <a><i class="fa-solid fa-location-dot"></i>Phuket, Thailand</a>
+                        </div>
+                        <div class="containt-right">
+                            <span>$6,000</span>
+                        </div>   
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+    <div class="section5">
+        <img src="https://s3-alpha-sig.figma.com/img/0f0b/30db/214ad0a7eeb36d7067f592a53ec16c89?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TUUEy3zOrRa37fGhhtYV5aBbRcQ4WF4oOt0DB2xzxkgRZnn9s7P-qAbW5n23ZDfig0nMfQyLIGsv6xMr5yonSUvMEhmcOf9ktsB3Hcy~jz5X0CyZ7Z6J56mBvj6oEpQ4BeMgW5kfaQIxBGeCtRaKiYh0EMp-gRA79AbhxXeqKyHbsCft0K9EW8Gy1zjd~sCsaSmyetb-R2syFSpT8s44r3u1JTla-yLFvlWg6-H6uRVa39H8tG0-7TVXTigEFhFSUBnNka6VU2iHU79gcNpApDEYTNpdpZcySiQnHtxKpjVH3Faj8lG0t~4VgnpsbGU6Gu7CmP7cTDglDNWZMIDqiw__" alt="backgroun">
+        <div class="section5-div">
+            <div class="section5-title">
+                <h6>EXPLORE MALDIVIVES</h6>
+            </div>
+            <div class="section5-container">
+                <div class="container-left">
+                    <div class="content">
+                        <p>Lorem Ipsum is simply dummy text of the <br> printing and typesetting industry. Lorem <br>Ipsum has been the industry's standard <br>dummy text ever since the 1500s.</p>
+                    </div>
+                    <button>See all</button>
+                </div>
+                <div class="container-right">
+                    <div class="righ-image">
+                        <img src="https://s3-alpha-sig.figma.com/img/b580/2222/d90c5930ca3ec2250927c62eace4a68b?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oVgb499AWsjldU0aqnwSR85dTV-mMviIN-KEBp0FCUTF79UVRaGBWhzMWVHEnCU~nanJXpm5SHgm09oU7X7SWgN5wvl-8Zaruv7hb5IGrLBXukfmbHkT6vq5GzD0L7Xp6ySx0ZSCMooOtGrvw3FmO14Kk8EffbEwDfpr7D7cpGh444BOe6Xaaw9QXpvFYi8cGprrvhnJBLqO0mL2PZmCNvH5IfSq2TktYFe5f~Av-F7JPkXT3CIdGxp1h1E6ZAdIH~LQ0g97T6flFLiFguA7JHKoYs8-ZEOBi8iv5jxlBMYQFScMLwZj6ILT3S-iqVOrLhoTreSc6Zj0WX5nE7Vn2Q__" alt="box image" style="width: 150px;height: 200px;border-radius: 12px;">
+                        <div class="image-text">
+                            <h3>Azure Haven</h3>
+                        </div>
+                    </div>
+                    <div class="righ-image">
+                        <img src="https://s3-alpha-sig.figma.com/img/72e7/1b5f/234c9e4af6ab71656c31d25ac4525040?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UKLmOOLR1TexWnaQNLw3MdfqfiKZs5vNmUIe~RjsQWsqTsr2grVel-8unInm7WlW2LWrpENa3SplCGJNfSEX7gj3pWEcMWz3P6KKRa0WzmADZZ~uBo6n72GjAiF17Ef6amJRU3e-tMeCcB2jgbSzy7w8Jxs8bxHzl4R23AlVqTplmbZWFf3fECO6-CqMthHoUUsC3hqwGqyhPdTZQebgW~HNvyAILzAT03q9ZE7itywAdNyDH3hcpHWxsaAEARskqP--uxl0SC-vYUauWAJC-KT-9vq4og~zwSPefN-3rcquIDkXt-TJuFXAp263YEziVBTwTnjp6mniElsIKD6GDQ__" alt="box image" style="width: 150px;height: 200px;border-radius: 12px;">
+                        <div class="image-text">
+                            <h3>Serene Sanctuary</h3>
+                        </div>
+                    </div>
+                    <div class="righ-image">
+                        <img src="https://s3-alpha-sig.figma.com/img/c808/5209/afbaa39da1a24ee3e67c1cca59a3de4d?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UlA2Vok1vaAtV5QzYiDIN18z1Z5O78qSVCc0RaRetKzaCZByazI~tOlMrQC3zMFSCSvIRwoBaPI8J7j1i7htzNUBJnMHoXQEhX7wZm~1LdWHxjbRFLhpXrz1ZAg4EoiLFJV2Hh72cS6LFJIM1S6XQxChqY-8cLS1ACQlTi-wtYKRY9mPC1AvFL0EgAgpY8gproGFHETs-ZU28aAxZa-tTQbFh1ySiY5Nw~mYAsJ4Ox~5hbhn5U82kCnaxNWFsnqc65alSunOoyvdJfg5B5v5VO9zdEe65cfTNflDPKFpr56H~3zXSqoAlukbgSkrQaaq5VzmhOT60sfDGUsdtghw1Q__" alt="box image" style="width: 150px;height: 200px;border-radius: 12px;">
+                        <div class="image-text">
+                            <h3>Verdan vista</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section6">
+        <div class="section6-head">
+            <div class="section6-left">
+                <h4>Feature News</h4>
+            </div>
+            <div class="section6-right">
+                <button><i class="fa-solid fa-less-than"></i></button>
+                <button><i class="fa-solid fa-greater-than"></i></button>
+            </div>
+        </div>
+        <div class="section6-bottom">
+            <div class="section6-box">
+                <div class="section6-img">
+                    <img src="https://s3-alpha-sig.figma.com/img/1f70/d649/00a03cefed1ebc0d8c1281cb7effadd8?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ic08NZT95~ck4uFTiyLrPGEU~oLq4RVWq81mWNLkn~6jvTqMwr0M8rdA8EIbunJXL0Lx-eGZs7cl0jm0fJBHykyP~0FYdeylPQYfGuCexFagD7uYyuJH9DKiIBjCTOFB2zLSZ8EaecmgtUEUfgmMBTl~Rvqa9gSH7btVVFhG1AjvqqLnU2tEU1mNgZk5D7KTWmI2qDc-dbANTaH83v1AVknf8f1h~W9ZEe0Fu1g2uLE6Z8Xt8cjqM1jUAiPny~jhLix3MtbOmiZWwfNwTdA4Pv2UGPIymn0sCmU3eHCWRPCbb~rvtYfD88E1Q6W2q8mpuHQtgFMuPNBSKKgo7ZoVOg__" alt="imgage" style="width: 285px; height: 200px; border-radius: 10px;">
+                </div>
+                <div class="section6-containt">
+                    <div class="section6-top">
+                        <a><i class="fa-solid fa-calendar-days">February 20, 2024</i></a>
+                        <h3>Delicious restaurant at Hanalei Bay</h3>
+                    </div>
+                    <div class="section6-bot">
+                        <p>Lorem Ipsum is simply dummy text of the<br> printing and typeset industry. Lorem <br>Ipsum has been lorem ... </p>
+                        <button><i class="fa-solid fa-greater-than"></i></button>
+                    </div>   
+                </div>   
+            </div>
+            <div class="section6-box">
+                <div class="section6-img">
+                    <img src="https://s3-alpha-sig.figma.com/img/1b4e/7dd2/ee3a632468b511f7b68531879d6e1efd?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=kZT5abQmZmEs3HDJNVLse~JdJ7rAkjT2wPAwcDdZOgFKe-F~zjagOh-7TpyBMkcjo91ldnfPxc6emZ~5FvAnVdXaAC8BUbVgseuDf~0HcNs-dDSaYLzzjxMHIwfmtkD6l5CI7fmtIy0pDuB6OE3BUjdF2pT1GJMB9lJ-ZT-dho3qSsmbPqR4TH-yCHflMfyheX-SCpD93qQUonJ6AgejULCTNMWJ~npKwvlwpD7k5DOtBeJrOMxptuDdmo9wkbQAJd3lMjUefSl~UMxtf~w62p8ZGGUL6yLNMx~2YTV4DCizmJF9PHREfKk8iKR-dKYzIx9folJ-UNCI6zJCRvnL7g__" alt="imgage" style="width: 285px; height: 200px; border-radius: 10px;">
+                </div>
+                <div class="section6-containt">
+                    <div class="section6-top">
+                        <a><i class="fa-solid fa-calendar-days">February 20, 2024</i></a>
+                        <h3>Top 10 most beautifull check-in spots in<br> Ph..</h3>
+                    </div>
+                    <div class="section6-bot">
+                        <p>Lorem Ipsum is simply dummy text of the<br> printing and typeset industry. Lorem <br>Ipsum has been lorem ... </p>
+                        <button><i class="fa-solid fa-greater-than"></i></button>
+                    </div>   
+                </div>   
+            </div>
+            <div class="section6-box">
+                <div class="section6-img">
+                    <img src="https://s3-alpha-sig.figma.com/img/fd48/6588/97b45ed4b49ab3f435b98a01b7f63ec1?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=m3qP3bLWGUUig8oog-I6xQXqVTpJu18b6vKsCe5Sjj5YQKvtWEF5CBlkEZ--92Vce72fGBa7YOePz4SbnV8oSgjfQrd2puL2ZY1CKtOyURot5D~pqciGKD6okpiPx~f3~0WbJFXjqWQP0UWY6YsM2Y~~gc07UQQZz0rxBUa3TVt0s7xkvnV5Rb4p~V7tgv~Hy-Aff28JXNxz7eBXRb5OKgA7892VgJG0q2laQ052AIpaUkVFf-uPnSATdYn2XuDK-uXrsWLoHHNK04I7Y0mW2-qBBsw8ZmKX7BKKR7QBE1AOffLEJo09qzMbS7sUVcZzbgwYeckpLyIkvt1xTFviGQ__" alt="imgage" style="width: 285px; height: 200px; border-radius: 10px;">
+                </div>
+                <div class="section6-containt">
+                    <div class="section6-top">
+                        <a><i class="fa-solid fa-calendar-days">February 20, 2024</i></a>
+                        <h3>Top 5 newest services at Navagio Beach</h3>
+                    </div>
+                    <div class="section6-bot">
+                        <p>Lorem Ipsum is simply dummy text of the<br> printing and typeset industry. Lorem <br>Ipsum has been lorem ... </p>
+                        <button><i class="fa-solid fa-greater-than"></i></button>
+                    </div>   
+                </div>   
+            </div>
+        </div>
+    </div>
+    <div class="section7">
+        <div class="section7-head"> 
+            <h4>Testimonials</h4>
+        </div>
+        <div class="section7-bottom"> 
+            <div class="section7-box">
+                <div class="testimonial-card">
+                    <img src="https://s3-alpha-sig.figma.com/img/67ff/d9ab/33f677397c671e58bef352ebc410bf03?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=aGMZwBqztJVZPVBFhVxNmJlZ-FMD52~6xcI7uIrmXaobfvYC3qcLevu6680BP3mVVehXlEI1BIdn4d~bZGr5hFJ36Rty9raio28Ddcc7QLloRw4wLr~2ygWUaptz1ggbs9zscLBD2p0AM9UJ6iFIipshZKvyR~NLjMCFjBhNSVsU5RIwhUbWlO~sBJ5rPHUnABuhB7cXNnY8OFcQcWgjtpkcWFeS4ICybFT5pSIb8Q-ohDAznbcvjQL7C69VibdRucViiY9Bup9vqqEAWyVi5OoL~fvT0waWeN5kdmphOwwV0ASj4lWIevAcCVk-DI6S3oSr2jrTBCj6ngFkyHagkA__" alt="Profile Image" class="profile-img">
+                    <div class="content">
+                        <div class="name-stars-container">
+                            <div class="name">Sebastian</div>
+                            <div class="stars">
+                                &#9733; &#9733; &#9733; &#9733; &#9733;
+                            </div>
+                        </div>
+                        <div class="profession">Graphic design</div>
+                        <div class="testimonial">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://s3-alpha-sig.figma.com/img/e94d/254b/e693d84dfbb3ac9340922750a034717e?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=L3OaYbCqxKNlwHzoAMrSCto8GgCYp8TVgq5bAnGdC1r8MGP0ZB9za2IrJKynDpX4gfuWXimb2yJzPM65~mhIm-q83EsgL-eHUfyUllvzORulyDew-GBiA14ovse8M6~QkHpvSgdY6K2gLWXmhZoyhD73UE8SS9k6NjVjMeiOaWBUKaj4t36ukVTG4fK0QB57cK2ZWY~omegbZg9VBt7CQJ2n~NfTXkzwb49LL4YB0Eb~WMozixhE79G5EiP5A00yxOD0O3csVkrndB5ywY3W5S2LV1OzX6Pd065Iniv-2m5i9HDvduZF5TcyVIW~BPMQex6e9UaGzcPg2YrNkSi~nw__" alt="Profile Image" class="profile-img">
+                    <div class="content">
+                        <div class="name-stars-container">
+                            <div class="name">Evangeline</div>
+                            <div class="stars">
+                                &#9733; &#9733; &#9733; &#9733; &#9733;
+                            </div>
+                        </div>
+                        <div class="profession">Model</div>
+                        <div class="testimonial">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://s3-alpha-sig.figma.com/img/9697/8ab5/005209dcaa684718f13a5811ce8d5619?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=U6nVX9w8SSMk1STTUXFiq32N4zYECs4XBHXTWQP-3RTenTRKZsU13tkNh5sUpbpcPOI0uwIH80s-oQIUNUcOiKDaJBZyQOo~bqnMAoouFIXF4SQ~YB17UhXpclZHszZIc1jMsVDdyutiDQK-8z9bGulpBkX~j2I68nl9gGxJNLKQltubQifAKM9VFi~02K71hwfPb2VgD~~CSkjaYVbgImIXH~8wA7yaO31TIbndZZMQmDsRHHfv2zqIbnVwbvRK~22CNyIApfEfk5Wh6WldLXy5w~R9bCDeGUFHSpAyGVZA3VCLvWyKlAUJl-xYrKaX9uuGSQt3~9PBdh~65XIeEA__" alt="Profile Image" class="profile-img">
+                    <div class="content">
+                        <div class="name-stars-container">
+                            <div class="name">Alexander</div>
+                            <div class="stars">
+                                &#9733; &#9733; &#9733; &#9733; &#9733;
+                            </div>
+                        </div>
+                        <div class="profession">Software engineer</div>
+                        <div class="testimonial">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section8">
+        <div class="subscription-container">
+            <div class="image-container">
+                <img src="https://s3-alpha-sig.figma.com/img/60bf/fa43/2797ea337cb69922720e3586831be317?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=B5sHAsBlLU9WrkWjUi6LZNdKGu8OB-8-wB~jNgyR7VIiCD7iFiFic6mRI~ATGUou4wkqAQqe3d6YBo2TiARcEKq1Xon-FRfqr3IAgKr5cn5ElRbeJz0XpTCty1jQtDL6u~9GKsQRZGGMhraYW26AfHGj1yeF74RPtedUeROA0jjPCjy7DWze9aJH80~7YslPWNtIoRM7ue7DuZ0AP-SoSS6nDWABYYeKDGlkDiqd3e9TuDYV8ZPZSYOarn3pWhdlQuqc0Glzfgv0NvjPo4DUVJzoBJnVypuydIW-nvfawJqgypc-GfJ-OSgZCFkfXSqEpOJ5Z2nlNsmW0r6UHZNESw__" alt="Luxury Villa">
+            </div>
+            <div class="text-container">
+                <h2>Get special offers,<br> and more from travelworld</h2>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Safety information</a></li>
+                    <li><a href="#">Cancellation options</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">Community Blog</a></li>
+                    <li><a href="#">Terms of service</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Get in touch</a></li>
+                    <li><a href="#">Partnerships</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Social</h3>
+                <div class="footer-social">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Copyright Acenda 2024</p>
+            <div class="payment-icons">
+                <img src="https://s3-alpha-sig.figma.com/img/9d65/da58/2ee281367d384c319c0752f941e324cc?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Dqvb76qQcdVpEJH-xWpJzMhLi-u5cBTg~r0YNIQkHBbkQaSNcyhxte1GrSqHA6iiNGF90XAAbc5IjrYHmHmpi32-PVvvlg~1fFtnqUZNGEbzGjuGyuHFalI7A0MgnZOJA27zjmJQprb4dd7x~7NmA-ulhyPsl1QZnHVY4klTcTYc9EbYyE3jzXEUo-YA8bKjT824RHbSOoR2K2oA9P5VOYPuQgVQsjvg6IpQ98fhQ8iVr14L2B5-kWFSNPt8KxVMcNUJx3~vkXqqrV23x-n4pD4-6NoqW9muoomLm7dHn~4ro6SuJ3I0DWTEUOEFlaz9F3oyxiCR3IM25slLiVXAeA__" alt="Payment">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
