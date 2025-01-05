@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #88a2ba; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-box {
+  background-color: #fff; 
+  width: 320px;
+  padding: 30px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+}
+
+.header-banner {
+  background-color: #2f4f6f; 
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 12px 0;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.input-field {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input-field i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #7da7c8;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 12px 10px 12px 40px; /* Add space for icon */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.input-field input:focus {
+  outline: none;
+  border-color: #7da7c8;
+  box-shadow: 0 0 5px rgba(125, 167, 200, 0.5);
+}
+.login-button {
+  position: relative;
+  background-color: #2f4f6f;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  border-radius: 0; 
+  padding: 12px 0;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 20px 0;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.login-button::before,
+.login-button::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #2f4f6f;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.login-button::before {
+  left: -10px;
+  border-radius: 0 0 0 4px;
+}
+
+.login-button::after {
+  right: -10px;
+  border-radius: 0 0 4px 0;
+}
+
+.login-button:hover {
+  background-color: #1e364f;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
+}
+
+.forgot-password {
+  margin-top: 5px;
+  font-size: 0.85rem;
+  color: #7da7c8;
+}
+
+.forgot-password a {
+  text-decoration: none;
+  color: #7da7c8;
+  font-weight: bold;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <div class="header-banner">CUSTOMER LOGIN</div>
+      <form>
+        <div class="input-field">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" placeholder="Username" required>
+        </div>
+        <div class="input-field">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" placeholder="Password" required>
+        </div>
+        <button type="submit" class="login-button">LOGIN</button>
+        <div class="forgot-password">
+          Forgot Password? <a href="#">Click Here</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

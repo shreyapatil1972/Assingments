@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #673ab7, #9c27b0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    .container {
+      display: flex;
+      width: 90%;
+      height: 45%;
+      max-width: 900px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .top-buttons {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      height: 30px;
+      padding-bottom: 10px;
+    }
+
+    .top-buttons button {
+      padding: 8px 16px;
+      border: 1px solid #673ab7;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 10px;
+    }
+
+    .top-buttons .btn-signup {
+      background: #fff;
+      color: #673ab7;
+      height: 20px;
+      width: 60px;
+      font-size: 10px;
+      border: 1px solid rgb(237, 182, 80);
+    }
+
+    .top-buttons .btn-login {
+      background: #673ab7;
+      color: #fff;
+     
+    }
+
+    .left-section {
+      background: #673ab7;
+      padding: 40px;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    .logo .icon {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .right-section {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .form-container {
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .form-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      background: transparent;
+      border: none;
+      font-size: 16px;
+      color: #673ab7;
+      cursor: pointer;
+      padding: 10px 20px;
+    }
+
+    .tab.active {
+      border-bottom: 2px solid #673ab7;
+      font-weight: bold;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 8px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .input-group .icon {
+      font-size: 18px;
+      border-right: 1px solid #9d9b9b;
+      padding: 10px 15px;
+      color: #673ab7;
+    }
+
+    .checkbox-group {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .checkbox-group input {
+      margin-right: 10px;
+    }
+
+    .checkbox-group label {
+      color: rgb(86, 82, 82);
+    }
+
+    .btn-login {
+      background: #673ab7;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .btn-login:hover {
+      background: #572ba8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-buttons">
+      <button class="btn-signup">SIGN UP</button>
+      <button class="btn-login">LOGIN</button>
+    </div>
+
+    <div class="left-section">
+      <div class="logo">
+        <div class="icon"><i class="fa-solid fa-circle-user"></i></div>
+        <h1>LOGIN</h1>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <div class="form-container">
+        <form class="login-form">
+          <div class="input-group">
+            <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+            <input type="email" placeholder="Email ID" required>
+          </div>
+          <div class="input-group">
+            <span class="icon"><i class="fa-solid fa-lock"></i></span>
+            <input type="password" placeholder="Set Password" required>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="terms">
+            <label for="terms">I have accepted the terms and conditions</label>
+          </div>
+          <button type="submit" class="btn-login">LOGIN</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

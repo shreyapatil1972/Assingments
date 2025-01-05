@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            background-color: rgb(189, 137, 237);
+            padding: 40px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .main {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: aliceblue;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .left-section {
+            width: 48%;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .left-section h2 {
+            color: rgb(44, 44, 51);
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .left-section p {
+            color: rgb(131, 131, 137);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: calc(100% - 40px);
+            height: 40px;
+            margin-bottom: 20px;
+            padding: 0 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .check {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .check input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin: 0;
+        }
+
+        .check label {
+            font-size: 14px;
+            color: #8b8686;
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .form-buttons button {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Purple Login Button */
+        .form-buttons button[type="submit"] {
+            background-color: purple;
+            color: white;
+        }
+
+        .form-buttons button[type="submit"]:hover {
+            background-color: darkviolet;
+        }
+        .form-buttons button[type="button"] {
+            background-color: white;
+            color: rgb(44, 44, 51);
+            border: 1px solid #ccc;
+        }
+
+        .form-buttons button[type="button"]:hover {
+            background-color: #f2f2f2;
+        }
+
+        .divider {
+            position: relative;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .divider hr {
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+
+        .divider span {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: aliceblue;
+            padding: 0 10px;
+            font-size: 14px;
+            color: #8b8686;
+        }
+
+        .right-section {
+            width: 48%;
+            text-align: center;
+        }
+
+        .right-section img {
+            width: 100%;
+            height: 500px;
+            border-radius: 8px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="left-section">
+            <h2>Login</h2>
+            <p>Don't have an account yet?</p>
+            <form class="form1">
+                <div class="form">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="you@gmail.com" required>
+                </div>
+                <div class="form">
+                    <label for="pass">Password</label>
+                    <input type="password" id="pass" placeholder="Enter 8 characters or more" required>
+                </div>
+                <div class="check">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit">Login</button>
+                </div>
+                <div class="divider">
+                    <hr>
+                    <span>or login with</span>
+                </div>
+                <div class="form-buttons">
+                    <button type="button">Google</button>
+                    <button type="button">Facebook</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="right-section">
+            <img src="download.jpeg" alt="login">
+        </div>
+    </div>
+</body>
+</html>

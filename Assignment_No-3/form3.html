@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdebd3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.form-container {
+  background-color: #f5f1ff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  width: 300px;
+  text-align: center;
+}
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  overflow: hidden; 
+}
+.input-group .icon {
+  font-size: 18px;
+  border-right: 1px solid #9d9b9b;
+  padding: 10px 15px;
+  
+}
+.input-group input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  padding-left: 20px;
+}
+
+.register-button {
+  background-color: #6a4bbc;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.register-button:hover {
+  background-color: #5835a3;
+}
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <form>
+      <div class="input-group">
+        <span class="icon"><i class="fa-solid fa-user"></i></span>
+        <input type="text" placeholder="Name">
+      </div>
+      <div class="input-group">
+        <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+        <input type="email" placeholder="Email ID">
+      </div>
+      <div class="input-group">
+        <span class="icon"><i class="fa-solid fa-phone"></i></span>
+        <input type="tel" placeholder="Phone">
+      </div>
+      <div class="input-group">
+        <span class="icon"><i class="fa-solid fa-lock"></i></span>
+        <input type="password" placeholder="Set Password">
+      </div>
+      <button type="submit" class="register-button">REGISTER</button>
+    </form>
+  </div>
+</body>
+</html>

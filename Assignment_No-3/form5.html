@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form5</title>
+    <style>
+        body {
+            
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 600px;
+            padding: 30px;
+            height: auto;
+            background-image:linear-gradient(to bottom, rgb(95, 227, 239), rgb(227, 174, 224));
+            border:2px dashed black ;
+        }
+        .formrow{
+            width: 600px;
+            height: 40px;
+            display: flex;
+        }
+        .labelcol{
+            width: 300px;
+            
+        
+        }
+        .inputcol{
+            width: 300px;
+
+        }
+        .inputdate{
+            display: inline;
+        }
+        .formrowhobies{
+            display: flex;
+            width: 600px;
+            height: 120px;
+            
+        }
+        .formrowqualification{
+            display: flex;
+            width: 600px;
+            height: 140px;
+        }
+        .formrowcourse{
+            display: flex;
+            width: 600px;
+            height: 110px;
+        }
+        button{
+            background-color: rgb(215, 205, 205);
+            border: none;
+            margin: 5px;
+            width: 70px;
+            height: 25px;
+
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div>
+        <h3 style="padding-left: 200px; text-decoration: underline blue; color: blue;">Student Registration form</h3>
+        <form class="container">
+            <div class="formrow">
+                <div class="labelcol">
+                    <label for="fname">First Name</label>
+                </div>
+                <div class="inputcol">
+                    <input type="text" id="fname" name="fname" placeholder="XYZ">
+                </div>
+            </div>
+            <div class="formrow">
+                <div class="labelcol">
+                    <label for="lname">Last name</label>
+                </div>
+                <div class="inputcol">
+                    <input type="text" id="lname" name="lname" placeholder="klm">
+                </div>
+            </div>
+            <div class="formrow">
+                <div class="labelcol">
+                    <label for="email">Email Id</label>
+                </div>
+                <div class="inputcol">
+                    <input type="email" id="email" name="email" placeholder="XYZ@gmail.com">
+                </div>
+            </div>
+            <div class="formrow">
+                <div class="labelcol">
+                    <label for="tel">Mobile no.</label>
+                </div>
+                <div class="inputcol">
+                    <input type="tel" id="tel" name="tel" placeholder="324343535iui">
+                </div>
+            </div>
+            <div class="formrow">
+                <div class="labelcol">
+                    <label for="">Gender</label>
+                </div>
+                <div class="inputcol">
+                    <span style="padding-right: 5px;"><input type="radio">Male</span>
+                    <span><input type="radio">Female</span>
+                </div>
+            </div>
+            <div class="formrow">
+                <div class="labelcol">
+                    <label for="date">select the date</label>
+                </div>
+                <div class="inputcol">
+                    <div >
+                        <select name="date" id="date">
+                            <option value="Day">Day</option>
+                        </select>
+                        <select name="date" id="date">
+                            <option value="Day">month</option>
+                        </select>
+                        <select name="date" id="date">
+                            <option value="Day">year</option>
+                        </select>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div class="formrow">
+                <div class="labelcol">
+                    <label for="fname">Address</label>
+                </div>
+                <div class="inputcol">
+                   <textarea name="address" id="address" rows="1"></textarea>
+                </div>
+            </div>
+            <div class="formrow">
+                <div class="labelcol">
+                    <label for="city">city</label>
+                </div>
+                <div class="inputcol">
+                    <input type="text" id="city" name="city" placeholder="kolhapur">
+                </div>
+            </div>
+            <div class="formrow">
+                <div class="labelcol">
+                    <label for="pin">Pin Code</label>
+                </div>
+                <div class="inputcol">
+                    <input type="number" id="pin" name=pin" placeholder="43647">
+                </div>
+            </div>
+            <div class="formrow">
+                <div class="labelcol">
+                    <label for="country">State</label>
+                </div>
+                <div class="inputcol">
+                    <input type="text" id="state" name="state" placeholder="Maharashatra">
+                </div>
+            </div>
+            <div class="formrow">
+                <div class="labelcol">
+                    <label for="country">Country</label>
+                </div>
+                <div class="inputcol">
+                    <input type="text" id="contry" name="contry" placeholder="India">
+                </div>
+            </div>
+            <div class="formrowhobies">
+                <div class="labelcol">
+                    <label for="country">Hobbies</label>
+                </div>
+                <div class="inputcol">
+                    <input type="checkbox" >drawing
+                    <input type="checkbox" >singing
+                    <input type="checkbox" >dancing 
+                    <input type="checkbox" >sketching
+                    <div><input type="checkbox" >others<input type="text" placeholder="Ex Sleeping"><h5>(Max50 chars allowed)</h5></div>
+                </div>
+            </div>
+            <div class="formrowqualification">
+                <div class="labelcol">
+                    <label for="country">Qalification</label>
+                </div>
+                <div class="inputcol">
+                    <div>
+                        <input type="checkbox" >High School
+                    </div>
+                    <div><input type="checkbox" >Higher School</div>
+                    <div><input type="checkbox" >Higher school</div>
+                    <div><input type="checkbox" >Graduation (BTECH)</div>
+                    <div><input type="checkbox" >Post Graduation(MTECH)</div>
+                    <div><input type="checkbox" >PHD</div>
+                </div>
+            </div>
+            <div class="formrowcourse">
+                <div class="labelcol">
+                    <label for="country">courses Applied for</label>
+                </div>
+                <div class="inputcol">
+                    <div>
+                        <input type="checkbox" >BCA
+                    </div>
+                    <div><input type="checkbox" >B.Com</div>
+                    <div><input type="checkbox" >B.Sc</div>
+                    <div><input type="checkbox" >BA</div>
+                    <div><input type="checkbox" >MCA</div>
+                    <div><input type="checkbox" >MCOM</div>
+                </div>
+            </div>
+            <div>
+                <button type="button"> submit</button>
+                <button type="reset">reset</button>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
