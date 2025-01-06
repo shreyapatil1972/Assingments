@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 100%;
+            height: 300px;
+        }
+        .header{
+            height: 90px;
+            background-color: purple;
+            align-items: center;
+            align-content: center;
+            text-align: center;
+            color: white;
+        }
+        .main{
+            display: flex;
+            height: 200px;
+            justify-content: space-around;
+            flex-wrap: nowrap;  
+        }
+        .box{
+            height: 200px;
+            background-color: aqua;
+            margin: 10px;
+        }
+        @media screen and (max-width:768px){
+            .container{
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+            }
+            .header{
+                width: 100%;
+                flex-direction: column;
+                height: 90px;
+            }
+            .main{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                height: auto;
+                width: 100%;
+            }
+            .box{
+                width: 100%;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">Sample Flexbox example</header>
+        <div class="main">
+            <div class="box">
+                <h3>First Article</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quibusdam! Corrupti saepe laudantium doloribus nesciunt consequuntur maxime unde dolores, obcaecati quod esse, pariatur rem nam ex, praesentium numquam optio id cum perspiciatis! Totam aperiam perspiciatis, atque, doloribus accusantium et facilis cupiditate quia magnam neque consequuntur quas, inventore nulla nam expedita!</p>
+            </div>
+            <div class="box">
+                <h3>Second Article</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quibusdam! Corrupti saepe laudantium doloribus nesciunt consequuntur maxime unde dolores, obcaecati quod esse, pariatur rem nam ex, praesentium numquam optio id cum perspiciatis! Totam aperiam perspiciatis, atque, doloribus accusantium et facilis cupiditate quia magnam neque consequuntur quas, inventore nulla nam expedita!</p>
+            </div>
+            <div class="box">
+                <h3>Third Article</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quibusdam! Corrupti saepe laudantium doloribus nesciunt consequuntur maxime unde dolores, obcaecati quod esse, pariatur rem nam ex, praesentium numquam optio id cum perspiciatis! Totam aperiam perspiciatis, atque, doloribus accusantium et facilis cupiditate quia magnam neque consequuntur quas, inventore nulla nam expedita!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
