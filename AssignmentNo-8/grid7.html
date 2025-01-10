@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(249, 202, 210);
+        }
+        .layout7{
+
+            margin: auto;
+            margin-top: 50px;
+            display: grid;
+            grid-template-areas: 'car1 car2 car3'
+                                 'car4 car5 car6'
+                                 'car7 car8 car9';
+            gap: 8px;
+            width: 616px;
+            padding: 8px;
+        }
+        .car1{
+            grid-area: car1;
+        }
+        .car2{
+            grid-area: car2;
+        }
+        .car3{
+            grid-area: car3;
+        }
+        .car4{
+            grid-area: car4;
+        }
+        .car5{
+            grid-area: car5;
+        }
+        .car6{
+            grid-area: car6;
+        }
+        .car7{
+            grid-area: car7;
+        }
+        .car8{
+            grid-area: car8;
+
+        }
+        .car9{
+            grid-area: car9;
+        }
+        .sizeDiv{
+            height: 200px;
+            width: 200px;
+            border: 1px solid grey;
+        }
+        .sizeDiv img{
+            height: 100%;
+            width: 100%;
+            object-fit:cover; 
+            transition: transform 0.3s ease;
+        }
+        .sizeDiv:hover {
+            z-index: 2; 
+        }
+        
+        .sizeDiv:hover img {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="layout7">
+        <div class="car1 sizeDiv">
+            <img src="/assets/car1.jpg" alt="car1">
+        </div>
+        <div class="car2 sizeDiv">
+            <img src="/assets/car2.jpg" alt="car2">
+        </div>
+        <div class="car3 sizeDiv">
+            <img src="/assets/car3.png" alt="car3">
+        </div>
+        <div class="car4 sizeDiv">
+            <img src="/assets/car4.png" alt="car4">
+        </div>
+        <div class="car5 sizeDiv">
+            <img src="/assets/car5.jpg" alt="car5">
+        </div>
+        <div class="car6 sizeDiv"><img src="/assets/car6.png" alt="car6"></div>
+        <div class="car7 sizeDiv"><img src="/assets/car7.jpg" alt="car7"></div>
+        <div class="car8 sizeDiv"><img src="/assets/car8.jpg" alt="car8"></div>
+        <div class="car9 sizeDiv"><img src="/assets/car9.jpg" alt="car9"></div>
+
+    </div>
+</body>
+</html>

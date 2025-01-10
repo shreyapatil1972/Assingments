@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .fruitslayout{
+      margin: 23%;
+      margin-top: 10px;
+      display: grid;
+      grid-template-areas: 'b s w w'
+                           'c c w w'
+                           'c c w w'
+                           'p p pa pa';
+      gap: 10px;
+
+    }
+    .berries{
+      grid-area: b;
+    }
+    .strawberry{
+      grid-area: s;
+
+    }
+    .watermelon{
+      grid-area: w;
+    }
+    .citrus{
+      grid-area: c;
+    }
+    .papaya{
+      grid-area: p;
+    }
+    .pineapple{
+      grid-area: pa;
+    }
+    .sizeDiv{
+      height: 150px;
+      width: 200px;
+    }
+    .sizeDiv2 {
+      height: 460px;
+      width: 400px;
+    }
+    .sizeDiv3{
+      width: 400px;
+      height: 300px;
+
+    }
+    .sizeDiv4{
+      width: 400px;
+      height: 200px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <div class="fruitslayout sizeDiv">
+    <div class="berries">
+      <img src="/assets/berryjpeg.jpeg" alt="blueberries">
+    </div>
+    <div class="strawberry sizeDiv">
+      <img src="/assets/papya.jpg" alt="strawberry">
+    </div>
+    <div class="watermelon sizeDiv2">
+      <img src="/assets/water.jpg" alt="watermelon">
+    </div>
+    <div class="citrus sizeDiv3">
+      <img src="/assets/orange.jpg" alt="citrus">
+    </div>
+    <div class="papaya sizeDiv4">
+      <img src="/assets/papya.jpg" alt="papaya">
+    </div>
+    <div class="pineapple sizeDiv4">
+      <img src="/assets/jack.jpg" alt="pineapple">
+    </div>
+
+  </div>
+</body>
+</html>

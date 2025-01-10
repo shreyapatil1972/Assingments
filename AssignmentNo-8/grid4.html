@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .large{
+
+            width: auto;
+            display: grid;
+            grid-template-areas: 'h11 h18 h18 h18 h18 h12'
+                                ' h13 h18 h18 h18 h18 h14'
+                                ' h15 h18 h18 h18 h18 h16'
+                                ' h17 h18 h18 h18 h18 h19'
+                                ' h110 h111 h112 h113 h114 h115';
+            background-color: rgb(49, 113, 198);
+            gap: 7px;
+            padding: 7px;
+            width: 40%;
+            height: 300px;
+        }
+        .h1{
+            grid-area: h11;
+        }
+        .h2{
+            grid-area: h12;
+        }
+        .h3{
+            grid-area: h13;
+        }
+        .h4{
+            grid-area: h14;
+        }
+        .h5{
+            grid-area: h15;
+        }
+        .h6{
+            grid-area: h16;
+        }
+        .h7{
+            grid-area: h17;
+        }
+        .h8{
+            grid-area: h18;
+        }
+        .h9{
+            grid-area: h19;
+        }
+        .h10{
+            grid-area: h110;
+        }
+        .h11{
+            grid-area: h111;
+        }
+        .h12{
+            grid-area: h112;
+        }
+        .h13{
+            grid-area: h113;
+        }
+        .h14{
+            grid-area: h114;
+        }
+        .h15{
+            grid-area: h115;
+        }
+        .size{
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="large">
+        <div class="h1 size">1</div>
+        <div class="h2 size">2</div>
+        <div class="h3 size">3</div>
+        <div class="h4 size">4</div>
+        <div class="h5 size">5</div>
+        <div class="h6 size">6</div>
+        <div class="h7 size">7</div>
+        <div class="h8 size">8</div>
+        <div class="h9 size">9</div>
+        <div class="h10 size">10</div>
+        <div class="h11 size">11</div>
+        <div class="h12 size">12</div>
+        <div class="h13 size">13</div>
+        <div class="h14 size">14</div>
+        <div class="h15 size">15</div>
+    </div>
+</body>
+</html>
