@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Car Details</title>
+  <style>
+    * {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .customCard {
+      background-color: rgb(212, 165, 72);
+      width: 25rem;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .customCard:hover {
+      transform: translateY(-5px);
+    }
+
+    .cardImage {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cardContent {
+      color: white;
+      padding: 15px;
+    }
+
+    .car {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 7px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .pickColor {
+      display: flex;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .colorOption {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid white;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .colorOption:hover {
+      transform: scale(1.1);
+    }
+
+    .blue {
+      background-color: #0e0e46;
+    }
+
+    .gray {
+      background-color: gray;
+    }
+
+    .black {
+      background-color: black;
+    }
+
+    .ChangingBgColor {
+      background-color: #0e0e46;
+    }
+
+    .customButton {
+      border-radius: 5px;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      cursor: pointer;
+      background-color: inherit;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .customButton:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .price {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
+
+    button {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="customCard">
+    <img src="carwhite.avif" alt="Car Image" class="cardImage" id="imageChange" />
+
+    <div class="cardContent">
+      <div class="car ChangingBgColor">Car</div>
+      <div>Mercedes-Benz C234 2022</div>
+      <p>Mileage: 4,000 miles</p>
+      <p>Fuel: Petrol</p>
+      <p>Safety: 5-star rating</p>
+      <p>Pick a color:</p>
+      <div class="pickColor">
+        <button class="colorOption blue" onclick="selectBlueCar()"></button>
+        <button class="colorOption gray" onclick="selectGrayCar()"></button>
+        <button class="colorOption black" onclick="selectBlackCar()"></button>
+      </div>
+      <div class="price">$134,567 <span><del>$140,500</del></span></div>
+      <br />
+      <button class="customButton ChangingBgColor">Add To Cart</button>
+    </div>
+  </div>
+
+  <p class="ChangingBgColor">Misal Pav</p>
+  <p class="ChangingBgColor">Pav Bhaji</p>
+  <button onclick="changeTheme()">Change Theme</button>
+
+  <script>
+    function selectBlueCar() {
+      changeCarColor('#0e0e46', 'carwhite.avif');
+    }
+
+    function selectGrayCar() {
+      changeCarColor('gray', 'cargray.webp');
+    }
+
+    function selectBlackCar() {
+      changeCarColor('black', 'carblack.avif');
+    }
+
+    function changeCarColor(color, imgSrc) {
+      let elements = document.getElementsByClassName('ChangingBgColor');
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].style.backgroundColor = color;
+      }
+      document.getElementById('imageChange').src = imgSrc;
+    }
+
+    function changeTheme() {
+      let paragraphs = document.querySelectorAll('p');
+      let card = document.querySelector('.customCard');
+      let body = document.body;
+
+      let isRed = paragraphs[0].style.color === 'red';
+
+      paragraphs.forEach(p => (p.style.color = isRed ? 'black' : 'red'));
+      card.style.backgroundColor = isRed ? 'orange' : 'pink';
+      body.style.backgroundColor = isRed ? 'pink' : 'white';
+    }
+  </script>
+</body>
+</html>
