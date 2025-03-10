@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>To-Do List Manager</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+        .container-wrapper {
+            max-width: 700px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .task-input {
+            display: flex;
+            gap: 10px;
+        }
+        .task-list {
+            margin-top: 20px;
+        }
+        .task-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+        .task-item:hover {
+            transform: scale(1.05);
+        }
+        .task-item.completed {
+            background-color: rgba(72, 201, 176, 0.8);
+            text-decoration: line-through;
+        }
+        .delete-btn {
+            background: #ff4757;
+            color: white;
+            border: none;
+            padding: 7px 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .delete-btn:hover {
+            background: #e84118;
+        }
+        input, select, button {
+            border-radius: 8px;
+            padding: 8px;
+            border: none;
+            outline: none;
+        }
+        button {
+            background: #ff9f43;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #e58e26;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-wrapper">
+        <h1>To-Do List Manager</h1>
+        <div class="task-input">
+            <input type="text" id="taskdetails" class="form-control" placeholder="Enter task...">
+            <select id="Status" class="form-select">
+                <option value="Select">Status</option>
+                <option value="Completed">Completed</option>
+                <option value="Pending">Pending</option>
+            </select>
+            <button id="addTask" class="btn">Add</button>
+        </div>
+        <div id="listRender" class="task-list"></div>
+    </div>
+    <script>
+        var obj = [];
+        function getFromLocal() {
+            return JSON.parse(localStorage.getItem('User')) || [];
+        }
+        function setToLocal(p) {
+            localStorage.setItem('User', JSON.stringify(p));
+        }
+        function addtask() {
+            var task = document.getElementById('taskdetails').value;
+            var stat = document.getElementById('Status').value;
+            if (task && stat !== "Select") {
+                obj.push({ task, stat });
+                document.getElementById('taskdetails').value = "";
+                document.getElementById('Status').value = "Select";
+                setToLocal(obj);
+                render();
+            }
+        }
+        function updateTaskStatus(index, checked) {
+            obj[index].stat = checked ? 'Completed' : 'Pending';
+            setToLocal(obj);
+            render();
+        }
+        function DeleteTask(index) {
+            obj.splice(index, 1);
+            setToLocal(obj);
+            render();
+        }
+        function render() {
+            obj = getFromLocal();
+            document.getElementById('listRender').innerHTML = obj.map((l, index) => `
+                <div class="task-item ${l.stat === 'Completed' ? 'completed' : ''}">
+                    <input type="checkbox" ${l.stat === 'Completed' ? 'checked' : ''} 
+                        onchange="updateTaskStatus(${index}, this.checked)">
+                    <span>${l.task}</span>
+                    <button class="delete-btn" onclick="DeleteTask(${index})">
+                        <i class="fa fa-trash-o"></i>
+                    </button>
+                </div>`).join('');
+        }
+        obj = getFromLocal();
+        document.getElementById('addTask').addEventListener('click', addtask);
+        render();
+    </script>
+</body>
+</html>
