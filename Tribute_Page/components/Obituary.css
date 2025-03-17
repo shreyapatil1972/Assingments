@@ -1,0 +1,54 @@
+.obituary-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  .obituary-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 900px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .obituary-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  .obituary-name {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .obituary-dates {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  .obituary-message {
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #444;
+  }
+  .obituary-biography, .obituary-memorial {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  .obituary-biography h2, .obituary-memorial h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: black;
+  }
+  .obituary-biography p, .obituary-memorial p {
+    font-size: 16px;
+    color: #555;
+  }
+  

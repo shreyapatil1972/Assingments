@@ -1,0 +1,20 @@
+.family-tree-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  .family-tree-container h1{
+    color: black;
+  }
+  .tree-image img {
+    width: 100%;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .tree {
+    margin-top: 20px;
+  }
+  
