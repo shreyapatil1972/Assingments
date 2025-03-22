@@ -1,0 +1,49 @@
+
+.custom-navbar {
+    background: white;
+    padding: 10px 20px;
+    border-bottom: 3px solid #e6e2d2;
+  }
+  .custom-navbar.navbar-light {
+    color: black !important;
+  }
+  .custom-navbar.navbar-dark {
+    color: white !important;
+  }
+  .navbar-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  .navbar-title {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+    text-transform: uppercase;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ffeb3b !important;
+    transform: scale(1.1);
+  }
+  
+  .navbar-nav .nav-link.active {
+    color: #ffcc00 !important;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-nav {
+      text-align: center;
+    }
+    .navbar-nav .nav-link {
+      padding: 10px 0;
+    }
+  }
+  

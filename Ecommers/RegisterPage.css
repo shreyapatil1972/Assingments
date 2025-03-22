@@ -1,0 +1,109 @@
+/* Background styling */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #ff9800, #4caf50);
+    padding: 20px;
+  }
+  
+  /* Form container */
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  /* Image styling */
+  .col img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Form styling */
+  form {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Form heading */
+  h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4caf50;
+    margin-bottom: 20px;
+  }
+  
+  /* Input fields */
+  .form-control {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Input focus effect */
+  .form-control:focus {
+    border-color: #ff9800;
+    box-shadow: 0px 0px 8px rgba(255, 152, 0, 0.5);
+  }
+  
+  /* Register button */
+  .btn-primary {
+    background-color: #4caf50;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ff9800;
+    transform: scale(1.05);
+  }
+  
+  /* Register link */
+  a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #ff9800;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  a:hover {
+    color: #4caf50;
+    text-decoration: underline;
+  }
+  
+  /* Mobile responsive adjustments */
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+      padding: 20px;
+    }
+    
+    .col img {
+      display: none;
+    }
+  
+    form {
+      width: 100%;
+    }
+  }
+  
