@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+     padding: 8px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     margin-bottom: 10px;
+     display: block;
+     width: 100%;
+   }
+   .output {
+     margin-top: 10px;
+     padding: 10px;
+     border: 1px solid #ccc;
+     background-color: #f9f9f9;
+     border-radius: 5px;
+   }
+   </style>
+</head>
+<body>
+    <h3>1.Digital CLock</h3>
+    <h1><span id="hr"></span>:<span id="min"></span>:<span id="sec"></span></h1>
+<button id="stopClock">Stop</button>
+<button id="startClock">Start</button>
+<hr>
+<h3>2.Timer with start, Pause and reset.</h3>
+    <h1><span id="hr2">00</span>:<span id="min2">00</span>:<span id="sec2">00</span></h1>
+    <button id="start">start</button>
+    <button id="pause">pause</button>
+    <button id="reset">Reset</button>
+<hr>
+<h3>3.Message Reminder.</h3>
+<input type="text" id="remindermessage" placeholder="Enter the message">
+<br>
+<input type="number" id="reminderTime" placeholder="Enter the Time">
+<br>
+<button onclick="messageRem()">Set Reminder</button>
+<br>
+<div class="output" id="reminderOutput"></div>
+
+<script>
+    // Digital Clock
+    console.log(Date());
+
+    function digiClock(){
+    today = new Date();
+    console.log(today)
+
+    hr = today.getHours();
+    console.log(hr)
+document.getElementById('hr').innerHTML = hr
+    min= today.getMinutes();
+    console.log(min);
+document.getElementById('min').innerHTML = min
+    sec= today.getSeconds();
+    console.log(sec)
+document.getElementById('sec').innerHTML = sec
+    }
+
+    digiClock()
+
+function forInterval(){
+    startClock = setInterval(digiClock, 1000)
+}
+forInterval()
+
+    document.getElementById('stopClock').addEventListener('click',()=>{
+        clearInterval(startClock)
+    }) 
+
+document.getElementById('startClock').addEventListener('click',forInterval)
+
+// 2.Time Start,Pause and Reset
+hr2 = 0
+        min2 = 0
+        sec2 = 0
+
+        function timeclock() {
+            sec2 = sec2 + 1
+            if (sec2 == 60) {
+                sec2 = 0
+                min2 = min2 + 1
+                if(min2 == 60){
+                    min = 0
+                    hr2 = hr2+1
+                    document.getElementById('hr2').innerHTML = hr2
+                }
+                document.getElementById('min2').innerHTML = min2
+            }
+            document.getElementById('sec2').innerHTML = sec2
+        }
+        function for1secInterval() {
+            startTimer = setInterval(timeclock, 1000)
+        }
+        function pauseclock() {
+            clearInterval(startTimer)
+        }
+        function resetclock() {
+            hr2=0
+            min2=0
+            sec2=0
+            document.getElementById('hr2').innerHTML = hr2
+            document.getElementById('min2').innerHTML = min2
+            document.getElementById('sec2').innerHTML = sec2
+        }
+        document.getElementById('start').addEventListener('click',for1secInterval)
+        document.getElementById('pause').addEventListener('click',pauseclock)
+        document.getElementById('reset').addEventListener('click',resetclock)
+
+    // 3.Message Reminder
+    function messageRem(){
+            const message = document.getElementById('remindermessage').value
+            const time = parseInt(document.getElementById('reminderTime').value,10) * 1000
+            setTimeout(()=>{
+                document.getElementById('reminderOutput').textContent = message
+            },time)
+        }
+        
+
+</script>
+
+
+
+</body>
+</html>
